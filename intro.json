@@ -1,0 +1,525 @@
+{
+  "collection": "quant_ai_learning_matrix",
+  "items": [
+    {
+      "id": "math_1",
+      "text": "Linear Algebra: Vectors and matrices are central to portfolio and risk modeling. Key concepts include matrix operations, eigenvalues, eigenvectors, and covariance matrices.\nKey formulas (verbatim):\nCov(X,Y) = E[(X - μ_X)(Y - μ_Y)]\nΣ = E[(X - μ)(X - μ)^T]\nΣ w = λ w (Eigenvalue equation)\nVar_p = w^T Σ w (Portfolio variance)",
+      "metadata": {
+        "section": "Mathematical Foundations",
+        "topic": "Linear Algebra"
+      }
+    },
+    {
+      "id": "math_2",
+      "text": "Probability & Statistics: Used to describe returns and risk distributions. Covers normal, log-normal, and heavy-tailed distributions, hypothesis testing, and p-values.\nKey formulas (verbatim):\nE[X] = Σ p(x) x  (Expectation)\nVar(X) = E[(X - μ)^2]\nρ(X,Y) = Cov(X,Y) / (σ_X σ_Y)\nZ = (X - μ) / σ  (Z-score)\nH_0: μ = μ_0,  H_1: μ ≠ μ_0 (Hypothesis testing)",
+      "metadata": {
+        "section": "Mathematical Foundations",
+        "topic": "Probability & Statistics"
+      }
+    },
+    {
+      "id": "math_3",
+      "text": "Time Series Analysis: Focused on modeling financial time series.\nKey elements include stationarity, cointegration, autocorrelation, volatility clustering, and regime-switching.\nKey formulas (verbatim):\nACF(k) = Corr(Y_t, Y_{t-k})\nAR(p): Y_t = c + Σ φ_i Y_{t-i} + ε_t\nMA(q): Y_t = μ + Σ θ_i ε_{t-i} + ε_t\nARMA(p,q): Y_t = c + Σ φ_i Y_{t-i} + Σ θ_j ε_{t-j} + ε_t\nGARCH(1,1): σ_t^2 = ω + α ε_{t-1}^2 + β σ_{t-1}^2",
+      "metadata": {
+        "section": "Mathematical Foundations",
+        "topic": "Time Series Analysis"
+      }
+    },
+    {
+      "id": "math_4",
+      "text": "Stochastic Processes: Used to represent asset price dynamics.\nKey processes include Brownian motion, Ito calculus, and Markov processes.\nKey formulas (verbatim):\nW_t ~ N(0, t) (Brownian motion)\ndX_t = μ dt + σ dW_t (Geometric Brownian Motion)\nP(X_{t+1} | X_t, X_{t-1}, …) = P(X_{t+1} | X_t) (Markov property)",
+      "metadata": {
+        "section": "Mathematical Foundations",
+        "topic": "Stochastic Processes"
+      }
+    },
+    {
+      "id": "math_5",
+      "text": "Stochastic Calculus: Provides the mathematical machinery for option pricing and derivative models.\nKey formulas (verbatim):\nIto’s Lemma: df(X_t) = f_x dX_t + ½ f_{xx} (dX_t)^2\nSDE: dS_t = μ S_t dt + σ S_t dW_t\nRisk-neutral pricing: V_0 = E_Q[ e^{-rT} V_T ]",
+      "metadata": {
+        "section": "Mathematical Foundations",
+        "topic": "Stochastic Calculus"
+      }
+    },
+    {
+      "id": "math_6",
+      "text": "Optimization Theory: Optimization methods applied to portfolio construction and risk control.\nKey formulas (verbatim):\nminimize f(x) subject to g_i(x) ≤ 0, h_j(x) = 0 (General form)\nL(x,λ,ν) = f(x) + Σ λ_i g_i(x) + Σ ν_j h_j(x) (Lagrangian)\nKKT Conditions:\n1. ∇f(x*) + Σ λ_i ∇g_i(x*) + Σ ν_j ∇h_j(x*) = 0\n2. g_i(x*) ≤ 0\n3. λ_i ≥ 0\n4. λ_i g_i(x*) = 0",
+      "metadata": {
+        "section": "Mathematical Foundations",
+        "topic": "Optimization Theory"
+      }
+    },
+    {
+      "id": "math_7",
+      "text": "Numerical Methods: Approximation and simulation techniques for finance.\nKey formulas (verbatim):\nMonte Carlo: E[f(X)] ≈ (1/N) Σ f(X_i)\nFinite differences: f’(x) ≈ (f(x+h) - f(x)) / h\nDynamic programming (Bellman equation): V_t(s) = max_a { r(s,a) + γ E[V_{t+1}(s’)] }",
+      "metadata": {
+        "section": "Mathematical Foundations",
+        "topic": "Numerical Methods"
+      }
+    },
+    {
+      "id": "math_8",
+      "text": "Information Theory: Applied to feature selection and comparing distributions.\nKey formulas (verbatim):\nEntropy: H(X) = - Σ p(x) log p(x)\nMutual Information: I(X;Y) = Σ Σ p(x,y) log [ p(x,y) / (p(x)p(y)) ]\nKL Divergence: D_KL(P||Q) = Σ P(x) log [ P(x) / Q(x) ]",
+      "metadata": {
+        "section": "Mathematical Foundations",
+        "topic": "Information Theory"
+      }
+    },
+    {
+      "id": "qf_1",
+      "text": "Portfolio Construction: Mean-variance optimization and factor models.\nKey formulas (verbatim):\nE[R_p] = w^T μ  (Portfolio expected return)\nVar(R_p) = w^T Σ w  (Portfolio variance)\nSharpe Ratio = (E[R_p] - R_f) / σ_p\nFactor model: R_i = α_i + β_i F + ε_i",
+      "metadata": {
+        "section": "Quantitative Finance / Portfolio Theory",
+        "topic": "Portfolio Construction"
+      }
+    },
+    {
+      "id": "qf_2",
+      "text": "Risk Measures: Risk metrics for portfolios.\nKey formulas (verbatim):\nVaR_α = inf { x : P(L ≤ x) ≥ α }\nCVaR_α = E[L | L ≥ VaR_α]\nσ_p = √(w^T Σ w)\nStress test: L_scenario = w^T r_scenario",
+      "metadata": {
+        "section": "Quantitative Finance / Portfolio Theory",
+        "topic": "Risk Measures"
+      }
+    },
+    {
+      "id": "qf_3",
+      "text": "Performance Metrics: Measures of portfolio efficiency.\nKey formulas (verbatim):\nSharpe Ratio = (E[R_p] - R_f) / σ_p\nSortino Ratio = (E[R_p] - R_f) / σ_d  (σ_d = downside deviation)\nInformation Ratio = (E[R_p] - R_b) / σ(R_p - R_b)\nα = R_p - (R_f + β (R_m - R_f))  (Jensen’s Alpha)\nβ = Cov(R_p, R_m) / Var(R_m)",
+      "metadata": {
+        "section": "Quantitative Finance / Portfolio Theory",
+        "topic": "Performance Metrics"
+      }
+    },
+    {
+      "id": "qf_4",
+      "text": "Asset Pricing Models: CAPM and multi-factor models.\nKey formulas (verbatim):\nCAPM: E[R_i] = R_f + β_i (E[R_m] - R_f)\nAPT: R_i = α_i + Σ β_{ij} F_j + ε_i\nStochastic discount factor: E[m R_i] = 1",
+      "metadata": {
+        "section": "Quantitative Finance / Portfolio Theory",
+        "topic": "Asset Pricing Models"
+      }
+    },
+    {
+      "id": "qf_5",
+      "text": "Derivatives Basics: Option pricing and Greeks.\nKey formulas (verbatim):\nBlack–Scholes (call): C = S_0 N(d_1) - K e^{-rT} N(d_2)\nwhere d_1 = [ln(S_0/K) + (r + σ^2/2)T] / (σ√T),  d_2 = d_1 - σ√T\nDelta (Δ) = ∂C/∂S\nGamma (Γ) = ∂^2C/∂S^2\nTheta (Θ) = ∂C/∂t\nVega (ν) = ∂C/∂σ\nRho (ρ) = ∂C/∂r",
+      "metadata": {
+        "section": "Quantitative Finance / Portfolio Theory",
+        "topic": "Derivatives Basics"
+      }
+    },
+    {
+      "id": "qf_6",
+      "text": "Volatility Modeling: Implied volatility, stochastic volatility, and volatility surfaces.\nKey formulas (verbatim):\nσ_impl solves: C_market = Black–Scholes(S, K, T, r, σ_impl)\nHeston model: dS_t = μ S_t dt + √(v_t) S_t dW_t^S ,  dv_t = κ(θ - v_t) dt + ξ √(v_t) dW_t^v",
+      "metadata": {
+        "section": "Quantitative Finance / Portfolio Theory",
+        "topic": "Volatility Modeling"
+      }
+    },
+    {
+      "id": "qf_7",
+      "text": "Futures & Forwards: Cost-of-carry and pricing relationships.\nKey formulas (verbatim):\nForward price: F_0(T) = S_0 e^{(r - q)T}\nCost of carry: F_0(T) = (S_0 + U - Y) e^{rT}\nBasis = F_t - S_t\nRoll yield ≈ (F_{t+1} - F_t) - (S_{t+1} - S_t)",
+      "metadata": {
+        "section": "Quantitative Finance / Portfolio Theory",
+        "topic": "Futures & Forwards"
+      }
+    },
+    {
+      "id": "qf_8",
+      "text": "Intermarket Analysis: Cross-asset relationships.\nKey formulas (verbatim):\nCorr(SPX, VIX) < 0 (negative correlation)\nCash-and-carry arbitrage: Buy spot, sell futures, finance via borrowing.",
+      "metadata": {
+        "section": "Quantitative Finance / Portfolio Theory",
+        "topic": "Intermarket Analysis"
+      }
+    },
+    {
+      "id": "qf_9",
+      "text": "Tax-Aware Optimization: Incorporating taxes into portfolio optimization.\nKey formulas (verbatim):\nAfter-tax return: R_after = (1 - τ) R_before\nTax-loss harvesting: Offset gains with realized losses within constraints.",
+      "metadata": {
+        "section": "Quantitative Finance / Portfolio Theory",
+        "topic": "Tax-Aware Optimization"
+      }
+    },
+    {
+      "id": "opt_1",
+      "text": "Portfolio Optimization: Framework for constructing optimal portfolios under constraints.\nKey formulas (verbatim):\nMinimize: w^T Σ w  subject to  w^T μ ≥ μ* ,  Σ w_i = 1 ,  w_i ≥ 0\nMean-variance objective: max_w [ w^T μ - (λ/2) w^T Σ w ]\nTransaction costs: C(w) = Σ c_i |Δw_i|",
+      "metadata": {
+        "section": "Optimization in Finance",
+        "topic": "Portfolio Optimization"
+      }
+    },
+    {
+      "id": "opt_2",
+      "text": "Solver Implementation: Tools and libraries for optimization in practice.\nExamples (verbatim):\nPython: CVXPY, SciPy.optimize, PuLP, OR-Tools\nCommercial solvers: Gurobi, MOSEK, CPLEX\nOpen-source solvers: OSQP, ECOS",
+      "metadata": {
+        "section": "Optimization in Finance",
+        "topic": "Solver Implementation"
+      }
+    },
+    {
+      "id": "opt_3",
+      "text": "Advanced Optimization: Covers convex programming, multi-period rebalancing, and scenario-based optimization.\nKey formulas (verbatim):\nMulti-period objective: max_{w_t} Σ_t β^t [ w_t^T μ_t - (λ/2) w_t^T Σ_t w_t ]\nScenario-based: min_w Σ_s p_s L(w, r_s)\nRobust optimization: min_w max_{Σ ∈ U} w^T Σ w",
+      "metadata": {
+        "section": "Optimization in Finance",
+        "topic": "Advanced Optimization"
+      }
+    },
+    {
+      "id": "ml_1",
+      "text": "Predictive Modeling: Regression and classification models for returns and signals.\nKey formulas (verbatim):\nLinear regression: y = Xβ + ε\nLogistic regression: P(y=1|x) = 1 / (1 + e^{-(β^T x)})\nMeta-labeling: FinalLabel = MetaModel(BaseModelSignal, Features)",
+      "metadata": {
+        "section": "AI / ML for Prediction & Decision Making",
+        "topic": "Predictive Modeling"
+      }
+    },
+    {
+      "id": "ml_2",
+      "text": "Deep Learning for Time Series: Neural networks for sequential data.\nKey formulas (verbatim):\nRNN update: h_t = f(W x_t + U h_{t-1} + b)\nLSTM cell: i_t = σ(W_i x_t + U_i h_{t-1} + b_i)\nf_t = σ(W_f x_t + U_f h_{t-1} + b_f)\no_t = σ(W_o x_t + U_o h_{t-1} + b_o)\nc_t = f_t ⊙ c_{t-1} + i_t ⊙ tanh(W_c x_t + U_c h_{t-1} + b_c)\nh_t = o_t ⊙ tanh(c_t)\nTransformer attention: Attention(Q,K,V) = softmax(QK^T / √d_k) V",
+      "metadata": {
+        "section": "AI / ML for Prediction & Decision Making",
+        "topic": "Deep Learning for Time Series"
+      }
+    },
+    {
+      "id": "ml_3",
+      "text": "Ensemble & Hybrid Models: Model combination methods.\nKey formulas (verbatim):\nBagging prediction: ŷ = (1/M) Σ f_m(x)\nBoosting update: F_m(x) = F_{m-1}(x) + γ h_m(x)\nStacking: FinalModel(x) = g(f_1(x), f_2(x), …, f_k(x))",
+      "metadata": {
+        "section": "AI / ML for Prediction & Decision Making",
+        "topic": "Ensemble & Hybrid Models"
+      }
+    },
+    {
+      "id": "ml_4",
+      "text": "Generative Models: Used for synthetic data generation and rare event modeling.\nKey formulas (verbatim):\nGAN objective: min_G max_D [ E_{x∼p_data}[log D(x)] + E_{z∼p_z}[log(1 - D(G(z)))] ]\nVAE loss: L = E_{q(z|x)}[log p(x|z)] - D_KL(q(z|x) || p(z))",
+      "metadata": {
+        "section": "AI / ML for Prediction & Decision Making",
+        "topic": "Generative Models"
+      }
+    },
+    {
+      "id": "ml_5",
+      "text": "Reinforcement Learning: Framework for sequential decision-making in trading.\nKey formulas (verbatim):\nQ-learning: Q(s,a) ← Q(s,a) + α [ r + γ max_{a'} Q(s',a') - Q(s,a) ]\nPolicy gradient: ∇θ J(θ) = E[ ∇θ log π_θ(a|s) R ]\nReward function: R_t = PnL_t - λ * Costs_t",
+      "metadata": {
+        "section": "AI / ML for Prediction & Decision Making",
+        "topic": "Reinforcement Learning"
+      }
+    },
+    {
+      "id": "ml_6",
+      "text": "Online Learning: Incremental updates for adapting to regime shifts.\nKey formulas (verbatim):\nSGD update: θ_{t+1} = θ_t - η ∇L(θ_t; x_t, y_t)\nPassive-aggressive update: θ_{t+1} = θ_t + τ y_t x_t , where τ = max(0, (1 - y_t (θ_t·x_t)) / ||x_t||^2)",
+      "metadata": {
+        "section": "AI / ML for Prediction & Decision Making",
+        "topic": "Online Learning"
+      }
+    },
+    {
+      "id": "ml_7",
+      "text": "Explainable AI (XAI): Model transparency methods.\nKey formulas (verbatim):\nSHAP value: φ_i = Σ_{S⊆F∖{i}} (|S|!(|F|-|S|-1)! / |F|!) [ f(S ∪ {i}) - f(S) ]\nLIME approximation: f(x) ≈ g(x) , where g ∈ G is interpretable and locally faithful.",
+      "metadata": {
+        "section": "AI / ML for Prediction & Decision Making",
+        "topic": "Explainable AI (XAI)"
+      }
+    },
+    {
+      "id": "ml_8",
+      "text": "Dimension Reduction: Feature extraction and compression.\nKey formulas (verbatim):\nPCA objective: max_W Tr(W^T Σ W)\nFactor analysis: X = μ + Λ f + ε",
+      "metadata": {
+        "section": "AI / ML for Prediction & Decision Making",
+        "topic": "Dimension Reduction"
+      }
+    },
+    {
+      "id": "ml_9",
+      "text": "Hyperparameter Optimization: Automated search for best model configurations.\nKey formulas (verbatim):\nGrid search: θ* = argmin_{θ ∈ Grid} L(θ)\nBayesian optimization acquisition: a(x) = μ(x) + κ σ(x)\nCross-validation (walk-forward): Train on [t0, t1], test on [t1, t2], roll forward with purging & embargo.",
+      "metadata": {
+        "section": "AI / ML for Prediction & Decision Making",
+        "topic": "Hyperparameter Optimization"
+      }
+    },
+    {
+      "id": "ml_10",
+      "text": "Backtesting & Validation: Ensuring robustness and performance evaluation.\nKey formulas (verbatim):\nPnL_t = w_t^T r_t - Costs_t\nSharpe = E[PnL] / σ(PnL)\nDeflated Sharpe = (Sharpe - μ_SR) / σ_SR\nReality check (SPA test): Adjust Sharpe for multiple testing bias.",
+      "metadata": {
+        "section": "AI / ML for Prediction & Decision Making",
+        "topic": "Backtesting & Validation"
+      }
+    },
+    {
+      "id": "data_1",
+      "text": "Data Sources: Core datasets for equities, options, futures, and economic indicators.\nKey notes (verbatim):\n- Equities: S&P 500, CRSP-like universe, corporate actions.\n- Options: OPRA/NBBO feeds, Greeks cache.\n- Futures: Continuous contracts, roll data, term structures.\n- Macroeconomic indicators: CPI, GDP, unemployment, interest rates.\n- Requirement: Point-in-time and survivorship-bias-free data.",
+      "metadata": {
+        "section": "Data & Market Intelligence",
+        "topic": "Data Sources"
+      }
+    },
+    {
+      "id": "data_2",
+      "text": "Alternative Data: Non-traditional datasets for alpha generation.\nExamples (verbatim):\n- News sentiment scores.\n- Social media metrics.\n- Satellite imagery.\n- Macro event datasets.\n- Licensing and data lineage must be preserved.",
+      "metadata": {
+        "section": "Data & Market Intelligence",
+        "topic": "Alternative Data"
+      }
+    },
+    {
+      "id": "data_3",
+      "text": "Technical Indicators: Derived features for trading strategies.\nKey formulas (verbatim):\nRSI = 100 - 100 / (1 + RS), where RS = AvgGain / AvgLoss\nMACD = EMA_{12}(Price) - EMA_{26}(Price)\nSignal line = EMA_{9}(MACD)\nBollinger Bands: Upper = MA + kσ, Lower = MA - kσ\nMomentum_t = Price_t - Price_{t-n}",
+      "metadata": {
+        "section": "Data & Market Intelligence",
+        "topic": "Technical Indicators"
+      }
+    },
+    {
+      "id": "data_4",
+      "text": "Futures-Specific Data: Market intelligence unique to futures contracts.\nKey formulas (verbatim):\nOpen interest: OI_t = # long contracts = # short contracts\nRoll yield ≈ (F_{t+1} - F_t) - (S_{t+1} - S_t)\nBasis = F_t - S_t",
+      "metadata": {
+        "section": "Data & Market Intelligence",
+        "topic": "Futures-Specific Data"
+      }
+    },
+    {
+      "id": "data_5",
+      "text": "Real-time / Streaming Data: Handling tick-level and event-driven feeds.\nKey notes (verbatim):\n- Message queues: Kafka, RabbitMQ.\n- Streaming APIs: WebSockets.\n- Techniques: checkpointing, partitioned replay, event ordering.\n- Must account for latency, jitter, and clock synchronization.",
+      "metadata": {
+        "section": "Data & Market Intelligence",
+        "topic": "Real-time / Streaming"
+      }
+    },
+    {
+      "id": "data_6",
+      "text": "Data Normalization & Features: Preprocessing to ensure robustness.\nKey formulas (verbatim):\nZ-score: z = (x - μ) / σ\nBox-Cox transform: y(λ) = (x^λ - 1) / λ , if λ ≠ 0 ; log(x), if λ = 0\nWinsorization: Replace extreme values beyond quantiles (α, 1-α)\nFeature store ensures leakage-free joins and schema tracking.",
+      "metadata": {
+        "section": "Data & Market Intelligence",
+        "topic": "Data Normalization & Features"
+      }
+    },
+    {
+      "id": "comp_1",
+      "text": "Parallelization / GPU / Distributed Computing: Techniques to accelerate large-scale simulations and training.\nKey notes (verbatim):\n- Numba, CUDA, CuPy for GPU acceleration.\n- PyTorch, JAX for GPU + autodiff.\n- Dask, Ray for distributed scaling.\n- joblib, MKL/BLAS/LAPACK for multicore optimization.",
+      "metadata": {
+        "section": "Algorithmic & Computational Optimization",
+        "topic": "Parallelization / GPU / Distributed"
+      }
+    },
+    {
+      "id": "comp_2",
+      "text": "Sparse & Memory-Efficient Computing: Methods for handling large covariance matrices and high-dimensional data.\nKey formulas (verbatim):\nSparse representation: A_sparse = { (i,j,a_ij) | a_ij ≠ 0 }\nBlockwise covariance update: Σ_{t+1} = (1-λ) Σ_t + λ (x_t - μ)(x_t - μ)^T\nOn-disk array format: Zarr, HDF5 for large data persistence.",
+      "metadata": {
+        "section": "Algorithmic & Computational Optimization",
+        "topic": "Sparse & Memory-Efficient"
+      }
+    },
+    {
+      "id": "comp_3",
+      "text": "Vectorization: Replace Python loops with fast array-based operations.\nKey formulas (verbatim):\nLoop form: for i in range(n): y[i] = a[i] * b[i]\nVectorized form: y = a ⊙ b\nNumexpr for fast evaluation: y = evaluate(\"a*b + c\")",
+      "metadata": {
+        "section": "Algorithmic & Computational Optimization",
+        "topic": "Vectorization"
+      }
+    },
+    {
+      "id": "comp_4",
+      "text": "High-Performance Solvers: Optimizers for constrained problems.\nExamples (verbatim):\n- Commercial: Gurobi, MOSEK, CPLEX.\n- Open-source: OSQP, ECOS.\n- Specialized: SCS (splitting cone solver).",
+      "metadata": {
+        "section": "Algorithmic & Computational Optimization",
+        "topic": "High-Performance Solvers"
+      }
+    },
+    {
+      "id": "comp_5",
+      "text": "Performance Targets: Benchmarks for financial compute systems.\nKey notes (verbatim):\n- Monte Carlo speedup ≥ 10× baseline.\n- Reproducibility enforced via fixed seeds.\n- Solver optimality gap ≤ tolerance ε.\n- Profiling tools: cProfile, line_profiler, Py-Spy.",
+      "metadata": {
+        "section": "Algorithmic & Computational Optimization",
+        "topic": "Performance Targets"
+      }
+    },
+    {
+      "id": "res_1",
+      "text": "Metaheuristics / Global Optimization: Non-convex optimization strategies for portfolio and strategy tuning.\nKey algorithms (verbatim):\nGenetic Algorithm (GA): Selection → Crossover → Mutation → New population\nSimulated Annealing (SA): Accept solution s' with probability p = exp(-(f(s') - f(s)) / T)\nParticle Swarm Optimization (PSO): v_i ← ω v_i + c1 r1 (p_i - x_i) + c2 r2 (g - x_i);  x_i ← x_i + v_i",
+      "metadata": {
+        "section": "Advanced Research Techniques",
+        "topic": "Metaheuristics / Global Optimization"
+      }
+    },
+    {
+      "id": "res_2",
+      "text": "Scenario / Robust Optimization: Approaches to handle uncertainty and stress scenarios.\nKey formulas (verbatim):\nScenario-based optimization: min_w Σ_s p_s L(w, r_s)\nRobust mean-variance: min_w max_{Σ ∈ U} w^T Σ w\nWasserstein ambiguity set: U = {Q : D_W(P, Q) ≤ δ}\nEllipsoidal uncertainty: U = { μ : (μ - μ̂)^T Σ^{-1} (μ - μ̂) ≤ θ }",
+      "metadata": {
+        "section": "Advanced Research Techniques",
+        "topic": "Scenario / Robust Optimization"
+      }
+    },
+    {
+      "id": "res_3",
+      "text": "Sensitivity Analysis: Techniques to assess model stability.\nKey formulas (verbatim):\nLocal sensitivity: S_i = ∂f/∂x_i\nSobol indices: S_i = Var(E[Y|X_i]) / Var(Y)\nTotal Sobol: S_Ti = E[Var(Y|X_~i)] / Var(Y)\nApplications: Stability of portfolio weights, Greeks, and risk metrics (VaR, CVaR).",
+      "metadata": {
+        "section": "Advanced Research Techniques",
+        "topic": "Sensitivity Analysis"
+      }
+    },
+    {
+      "id": "risk_1",
+      "text": "Model Validation: Ensuring feasibility, robustness, and adherence to constraints.\nKey checks (verbatim):\n- Constraint adherence: g_i(x*) ≤ 0\n- Feasibility: h_j(x*) = 0\n- Robustness: Test across subsamples and challengers.\n- Reality check (SPA test): Adjust Sharpe ratios for multiple testing.",
+      "metadata": {
+        "section": "Risk, Validation & Governance",
+        "topic": "Model Validation"
+      }
+    },
+    {
+      "id": "risk_2",
+      "text": "Stress Testing: Simulating historical and hypothetical shocks.\nKey formulas (verbatim):\nHistorical scenario PnL: L = w^T r_{2008}\nHypothetical shock: r_t' = r_t + Δr\nPath-dependent stress: dS_t = μ S_t dt + σ_t S_t dW_t , with σ_t shocked upward.",
+      "metadata": {
+        "section": "Risk, Validation & Governance",
+        "topic": "Stress Testing"
+      }
+    },
+    {
+      "id": "risk_3",
+      "text": "Model Risk Management: Processes for governance and model oversight.\nKey notes (verbatim):\n- Assumption checks documented.\n- Deflated Sharpe Ratio = (Sharpe - μ_SR) / σ_SR\n- Reality check (SPA) for overfitting control.\n- Model cards for transparency.",
+      "metadata": {
+        "section": "Risk, Validation & Governance",
+        "topic": "Model Risk Management"
+      }
+    },
+    {
+      "id": "risk_4",
+      "text": "Adversarial Robustness: Resilience against manipulated or noisy inputs.\nKey techniques (verbatim):\n- Add Gaussian noise to features: x' = x + ε , ε ~ N(0,σ^2)\n- Fake news injection stress tests.\n- Delayed data scenarios to test latency sensitivity.",
+      "metadata": {
+        "section": "Risk, Validation & Governance",
+        "topic": "Adversarial Robustness"
+      }
+    },
+    {
+      "id": "risk_5",
+      "text": "Real-time Monitoring: Ongoing surveillance of deployed models.\nKey formulas (verbatim):\nResidual EWMA: r_t = λ r_{t-1} + (1-λ) e_t\nPopulation stability index (PSI): PSI = Σ (p_i - q_i) log(p_i / q_i)\nAnomaly detection: Alert if |e_t| > kσ_e\nKill-switch: if PnL_t < threshold → halt trading.",
+      "metadata": {
+        "section": "Risk, Validation & Governance",
+        "topic": "Real-time Monitoring"
+      }
+    },
+    {
+      "id": "risk_6",
+      "text": "Regulatory & Practical Constraints: Legal and operational risk controls.\nKey rules (verbatim):\n- Leverage caps: L = Assets / Equity ≤ L_max\n- Liquidity: Turnover ≤ cap\n- Short selling: Must locate borrow before execution\n- Transaction costs: C = Spread + Impact + Fees",
+      "metadata": {
+        "section": "Risk, Validation & Governance",
+        "topic": "Regulatory & Practical"
+      }
+    },
+    {
+      "id": "exec_1",
+      "text": "Execution Algorithms: Methods for trade execution with minimal market impact.\nKey formulas (verbatim):\nImplementation Shortfall (IS) = (Paper Return - Actual Return)\nVWAP = Σ (P_t * V_t) / Σ V_t\nTWAP = (1/T) Σ P_t\nAlmgren-Chriss model: Minimize  E[C] + λ Var(C) , where C = trading cost",
+      "metadata": {
+        "section": "Execution & Integration",
+        "topic": "Execution Algorithms"
+      }
+    },
+    {
+      "id": "exec_2",
+      "text": "Market Microstructure: Order book dynamics and price impact.\nKey formulas (verbatim):\nMidprice: m_t = (a_t + b_t)/2 , where a_t = ask , b_t = bid\nBid-ask spread: s = a_t - b_t\nPrice impact: ΔP ≈ λ * Q , where Q = trade size, λ = impact coefficient",
+      "metadata": {
+        "section": "Execution & Integration",
+        "topic": "Market Microstructure"
+      }
+    },
+    {
+      "id": "exec_3",
+      "text": "Transaction Cost Models: Capturing explicit and implicit trading costs.\nKey formulas (verbatim):\nTotal Cost = Commission + Fees + Spread Cost + Market Impact\nMarket Impact: MI ≈ η * (Q / V)^β , where V = market volume\nSlippage = (Execution Price - Decision Price) × Quantity",
+      "metadata": {
+        "section": "Execution & Integration",
+        "topic": "Transaction Cost Models"
+      }
+    },
+    {
+      "id": "exec_4",
+      "text": "Backtesting with Execution Models: Simulating realistic trade costs and slippage.\nKey formulas (verbatim):\nExecuted PnL = Σ (w_t^T r_t - Costs_t)\nCosts_t = SpreadCost_t + MarketImpact_t + Fees_t\nEffective spread = (ExecutionPrice - MidPrice) × 2",
+      "metadata": {
+        "section": "Execution & Integration",
+        "topic": "Backtesting with Execution Models"
+      }
+    },
+    {
+      "id": "exec_5",
+      "text": "Integration with Production Systems: Deployment of models and pipelines.\nKey notes (verbatim):\n- API endpoints for order routing.\n- Latency budgets: O(ms) per decision.\n- Monitoring: Latency, slippage, order rejection rate.\n- Failover: Redundant connections and hot-standby systems.",
+      "metadata": {
+        "section": "Execution & Integration",
+        "topic": "Integration with Production Systems"
+      }
+    },
+    {
+      "id": "execint_1",
+      "text": "Order Execution Strategies: Algorithms to balance cost, risk, and urgency.\nKey formulas (verbatim):\nVWAP schedule: Q_t = (V_t / Σ V) × Q_total\nTWAP schedule: Q_t = Q_total / T\nImplementation Shortfall: IS = (P_exec - P_decision) × Q",
+      "metadata": {
+        "section": "Execution & Integration (Live)",
+        "topic": "Order Execution Strategies"
+      }
+    },
+    {
+      "id": "execint_2",
+      "text": "Smart Order Routing (SOR): Optimally splitting orders across venues.\nKey notes (verbatim):\n- Objective: Minimize total cost = Σ (p_i q_i + fee_i q_i)\n- Constraints: Σ q_i = Q , q_i ≥ 0\n- Inputs: Venue liquidity, latency, fee structure, reliability.",
+      "metadata": {
+        "section": "Execution & Integration (Live)",
+        "topic": "Smart Order Routing (SOR)"
+      }
+    },
+    {
+      "id": "execint_3",
+      "text": "Slippage & Market Impact Models: Estimating transaction costs under real-time execution.\nKey formulas (verbatim):\nSlippage = (P_exec - P_expected) × Q\nTemporary impact: MI_temp = η (Q / V)^β\nPermanent impact: MI_perm = γ Q",
+      "metadata": {
+        "section": "Execution & Integration (Live)",
+        "topic": "Slippage & Market Impact Models"
+      }
+    },
+    {
+      "id": "execint_4",
+      "text": "Risk Controls in Execution: Limits and monitoring safeguards.\nKey rules (verbatim):\n- Max order size: Q ≤ Q_max\n- Price collars: |P_exec - P_ref| ≤ δ\n- Stop-loss trigger: If P_t ≤ P_stop → exit position\n- Circuit breakers: halt trading if |Index Return| > threshold",
+      "metadata": {
+        "section": "Execution in Live Trading",
+        "topic": "Risk Controls in Execution"
+      }
+    },
+    {
+      "id": "execint_5",
+      "text": "System Integration: Connecting research to production.\nKey notes (verbatim):\n- Deployment as REST / gRPC microservices.\n- Real-time feature stores.\n- Monitoring pipeline: latency < 50ms per trade.\n- Logging: request_id, order_id, latency_ms, PnL attribution.\n- Continuous deployment with rollback triggers.",
+      "metadata": {
+        "section": "Execution in Live Trading",
+        "topic": "System Integration"
+      }
+    },
+    {
+      "id": "impl_1",
+      "text": "Backtesting Frameworks: Simulation of historical performance to validate strategies.\nKey formulas (verbatim):\nPortfolio value: V_t = V_{t-1}(1 + R_{p,t})\nCumulative return: CR_t = (V_t / V_0) - 1\nMax drawdown: MDD = max_t [ (Peak_t - V_t) / Peak_t ]",
+      "metadata": {
+        "section": "Implementation (Execution & Deployment)",
+        "topic": "Backtesting Frameworks"
+      }
+    },
+    {
+      "id": "impl_2",
+      "text": "Paper Trading: Simulated trading in live markets without capital at risk.\nKey notes (verbatim):\n- Orders routed to simulated broker.\n- Same latencies and fees as production.\n- Measures slippage, fill ratios, and execution errors before real deployment.",
+      "metadata": {
+        "section": "Implementation (Execution & Deployment)",
+        "topic": "Paper Trading"
+      }
+    },
+    {
+      "id": "impl_3",
+      "text": "Live Deployment: Running trading strategies in production.\nKey formulas (verbatim):\nNet PnL = Σ (ExecutedPrice_t - BenchmarkPrice_t) × Quantity_t - Costs_t\nExecution latency: Latency = t_exec - t_signal\nFill ratio = FilledQty / SubmittedQty",
+      "metadata": {
+        "section": "Implementation (Execution & Deployment)",
+        "topic": "Live Deployment"
+      }
+    },
+    {
+      "id": "impl_4",
+      "text": "Monitoring & Logging: Ensuring stability and transparency.\nKey metrics (verbatim):\n- Real-time PnL_t = w_t^T r_t - Costs_t\n- Latency threshold: Latency ≤ τ_max\n- Order rejection rate = RejectedOrders / TotalOrders\n- Drift detection: KL(P_live || P_train) > δ → retrain",
+      "metadata": {
+        "section": "Implementation (Execution & Deployment)",
+        "topic": "Monitoring & Logging"
+      }
+    },
+    {
+      "id": "impl_5",
+      "text": "Governance & Compliance: Operating within regulatory frameworks.\nKey notes (verbatim):\n- KYC/AML checks on counterparties.\n- Trade surveillance for market abuse.\n- Audit trail: All decisions must be logged.\n- Stress scenarios reported to regulators.\n- Model validation and approval process required before production use.",
+      "metadata": {
+        "section": "Implementation (Execution & Deployment",
+        "topic": "Governance & Compliance"
+      }
+    }
+  ]
+}
